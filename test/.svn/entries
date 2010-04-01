@@ -1,0 +1,77 @@
+10
+
+dir
+155
+https://adam.law.harvard.edu/svn/not-a-number/trunk/test
+https://adam.law.harvard.edu/svn/not-a-number
+
+
+
+2009-11-25T19:19:13.512328Z
+71
+jcallina
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+bee6f815-1ec6-4924-adf7-be5b69de16d9
+
+fixtures
+dir
+
+functional
+dir
+
+integration
+dir
+
+performance
+dir
+
+test_helper.rb
+file
+
+
+
+
+2009-11-10T20:13:15.000000Z
+e297614c72684d065aef001f86188732
+2009-08-26T19:50:39.943193Z
+2
+jcallina
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1800
+
+unit
+dir
+

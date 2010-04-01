@@ -1,0 +1,30 @@
+<b>Import choices via CSV</b>
+
+<p>
+  Use the form below to import choices via a CSV (comma separated value) file.  Text and strings must be surrounded by double quotes.
+  Each row will be separated by a newline or carriage return.  e.g. "title", "output_text", "description"
+</p>
+
+<p>
+  <b><i>Format example:</i></b><br />
+
+  <code>
+    "country_norway", "Norway", "A little nip of Norway"<br />
+    "country_greece", "Greece", "A little spot of Greece"<br />
+    "country_hungary", "Hungary", "A little hunk of Hungary"<br />
+    "country_turkey", "Turkey", "A little slice of Turkey"<br />
+  </code>
+
+</p>
+
+<div class="upload_form">
+<% form_tag({:action => :import}, :multipart => true, :accept => "text/csv") do %>
+  <p><label for="upload_file">Select File</label> :
+
+  <%= file_field 'upload', 'datafile' %></p>
+  <%= submit_tag "Upload" %>
+<% end %>
+</div>
+
+
+

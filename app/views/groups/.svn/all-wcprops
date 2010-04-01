@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/not-a-number/!svn/ver/141/trunk/app/views/groups
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/not-a-number/!svn/ver/48/trunk/app/views/groups/new.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/not-a-number/!svn/ver/141/trunk/app/views/groups/show.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/not-a-number/!svn/ver/2/trunk/app/views/groups/edit.html.erb
+END
+toggle_active.erb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/not-a-number/!svn/ver/7/trunk/app/views/groups/toggle_active.erb
+END
+_group_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/not-a-number/!svn/ver/41/trunk/app/views/groups/_group_form.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/not-a-number/!svn/ver/2/trunk/app/views/groups/index.html.erb
+END
+toggle_active.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/not-a-number/!svn/ver/22/trunk/app/views/groups/toggle_active.rjs
+END

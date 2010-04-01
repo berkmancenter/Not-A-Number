@@ -1,0 +1,139 @@
+html {
+    height: 100%;
+}
+
+body {
+	font-size: 13px;
+	/* text-align: justify; */
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+        height: 100%;
+}
+
+.errors {
+    color: red;
+    font-weight: bold;
+}
+
+#doc4 {
+    height: 100%;
+}
+
+.p5 {
+    padding: 5px;
+}
+
+.p20 {
+    padding: 20px;
+}
+
+.bold_text {
+    font-weight: bold;
+}
+
+a {
+	color: #2382A1;
+        font-weight: bold;
+	text-decoration: none
+}
+
+a:hover {
+	color: #555;
+	text-decoration: none
+}
+
+.top_nav {
+   padding-top: 10px;
+   padding-bottom: 25px;
+
+}
+
+.nav_title{
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+
+.nav_box {
+   padding-bottom: 10px;
+
+}
+
+.page_title {
+    padding-left: 20px;
+}
+
+.cell_like {
+    float: left;
+}
+
+#page_title {
+    font-size: 18px;
+	padding-bottom: 10px;
+}
+
+#section_title {
+    font-size: 14px;
+	padding-bottom: 8px;
+}
+
+p {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* table styles */
+#projects table {
+	width: auto;
+	border-collapse: collapse;
+	margin: 1em 0;
+}
+
+#projects th, #projects td {
+	text-align: left;
+	padding: .5em;
+	border: 1px solid #fff;
+}
+
+#projects th {
+	background: #328aa4 url(tr_back.gif) repeat-x;
+	color: #fff;
+}
+#projects td {
+	background: #e5f1f4;
+}
+
+.radio input {
+	margin-top: 12px;
+}
+
+.upload_form {
+    margin-top: 50px;
+}
+
+/* CSS for autocomplete */
+
+div.autocomplete {
+  position:absolute;
+  width:250px;
+  background-color:white;
+  border:1px solid #888;
+  margin:0;
+  padding:0;
+}
+div.autocomplete ul {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+div.autocomplete ul li.selected { background-color: #ffb;}
+div.autocomplete ul li {
+  list-style-type:none;
+  display:block;
+  margin:0;
+  padding:2px;
+  height:32px;
+  cursor:pointer;
+}
+
+
+

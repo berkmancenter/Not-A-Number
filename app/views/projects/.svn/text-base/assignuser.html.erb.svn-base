@@ -1,0 +1,11 @@
+<div class="yui-g">
+  <div class="yui-u first">
+    <div id="object_item_list_container">
+    <%=  render :partial => "object_user_list", :locals => {:object_users => @assigned_users, :object => @project } %>
+    </div>
+  </div>
+  <div id="object_list_container" class="yui-u">
+    <%= render :partial => "inactive_user_list", :locals => { :available_users => @users, :object => @project } %>
+  </div>
+</div>
+

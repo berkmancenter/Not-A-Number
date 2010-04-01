@@ -1,0 +1,49 @@
+    <div class="list-title"><%= object.title %></div><br />
+
+    <div id="object-<%=object.id%>-add-area-0" class="draggable_area"></div>
+
+    <%= drop_receiving_element "object-#{object.id}-add-area-0",
+    :url => {:action => 'add_user', :object => object, :item_number => 0},
+    :accept => "available_item",
+    :hoverclass => "background_yellow" %>
+    <br />
+
+    <ul id="item_sort">
+      <% object_users.each_with_index do |object_user, item_number| %>
+        <li id="item-<%= object_user.user_id%>-sort" class="droppable">
+		<% div_class = "" %>
+		<div id="item-<%= object_user.user_id%>-content" class="sort_item<%= div_class %>">
+		  <div class="sort_header<%= div_class %>"><%= object_user.login %> - <%= object_user.name %></div>
+		  <div class="item_control_block">
+			<div class="cell_like item_controls"><%= link_to 'Set Admin', assignuser_project_url(object_user.user_id, :role => "admin", :project => object, :role_action => "add") %></div>
+			<div class="cell_like item_controls"><%= link_to 'Set Owner', assignuser_project_url(object_user.user_id, :role => "owner", :project => object, :role_action => "add") %></div>
+			<div class="cell_like item_controls"><%= link_to 'Set Manager', assignuser_project_url(object_user.user_id, :role => "manager", :project => object, :role_action => "add") %></div>
+			<div class="cell_like item_controls"><%= link_to 'Set Editor', assignuser_project_url(object_user.user_id, :role => "editor", :project => object, :role_action => "add") %></div>
+			<div class="cell_like item_controls"><%= link_to 'Set User', assignuser_project_url(object_user.user_id, :role => "user", :project => object, :role_action => "add") %></div>
+			<div class="cell_like item_controls"><%= link_to 'Remove Role', assignuser_project_url(object_user.user_id, :role => object_user.name, :project => object, :role_action => "remove") %></div>
+		  </div>
+		</div>
+        <div id="object-<%=object.id%>-add-area-<%= item_number + 1 %>" class="draggable_area"></div>
+
+        <%= drop_receiving_element "object-#{object.id}-add-area-#{item_number + 1}",
+        :url => {:action => 'add_user', :object => object, :item_number => item_number + 1},
+        :accept => "available_item",
+        :hoverclass => "background_yellow" %>
+        
+        </li>
+
+    <% end unless object_users.nil?%>
+    </ul>
+
+    <br />
+
+    <%= sortable_element "item_sort",
+      :url => {:action => 'sort_items'},
+      :before => "$('spinner_block').show()",
+      :format => '/^item-(.*)-sort$/',
+      :constraint => false,
+      :revert => "\"failure\""
+      %>
+
+
+

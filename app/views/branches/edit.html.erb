@@ -1,0 +1,8 @@
+<% form_for(@branch) do |f| %>
+  <%= f.error_messages %>
+
+	<%= render :partial => "branch_form", :object => f, :locals => {:source => @source, :project_id => @branch.project_id, :group_id => @branch.group_id} %>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>

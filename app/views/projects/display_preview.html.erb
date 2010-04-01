@@ -1,0 +1,23 @@
+<%if !@groups.nil?
+    @groups.each do |group|
+      @group = Group.find(group.group_id)
+      @questions = @group.questions.find(:all, :conditions => {"group_items.active" => true})
+      @nancode = "NANCODE-#{@project.id}-#{@group.id}"  
+%>	
+<div id="group-container">
+  <% question_iterator = 0 %>
+  <% @questions.each do |question| %>
+    <% if question.number? %>
+	  <% question_iterator = question_iterator + 1 %>
+      <%= question.render(@code, @nancode, request.session_options[:id], question_iterator) %><br />
+	<%else%>
+	  <%= question.render(@code, @nancode, request.session_options[:id]) %>
+	<%end%>
+  <% end %>
+
+   ---------------------------------------------------------------
+</div>
+
+   <% end %>
+   
+<% end %>

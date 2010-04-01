@@ -1,0 +1,7 @@
+  <tr>
+    <td class="p5"><b><%= link_to project.title, project_url(project) %></b></td>
+    <td class="p5"><%= link_to 'Edit', edit_project_path(project, :source => "dialog_index"), :title => "Edit Project ID #{project.id}", :onclick => "Modalbox.show(this.href, {title: this.title, width: 600}); return false;" %></td>
+    <td class="p5"><%= link_to 'Add User', assignuser_project_url(project) %></td>
+    <td class="p5"><%= link_to 'Display', display_project_url(project) %></td>
+    <td class="p5"><%= Code.count(:conditions => {:project_id => project.id, :user_id => current_user.id, :completed => true}) %></td>
+  </tr>

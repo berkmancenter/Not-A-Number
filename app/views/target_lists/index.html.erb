@@ -1,0 +1,12 @@
+<h1>All Target Lists</h1>
+
+<table border="1">
+<% @target_lists.each do |target_list| %>
+  <%= render :partial => "target_list_display", :locals => {:target_list => target_list} %>
+<% end unless @target_lists.nil? %>
+</table>
+
+<br />
+
+<%= link_to 'New Target List', new_target_list_path(:source => "dialog_index"), :title => "New Target List", :onclick => "Modalbox.show(this.href, {title: this.title, width: 600}); return false;" %>
+

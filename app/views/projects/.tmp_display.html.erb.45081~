@@ -1,0 +1,22 @@
+<!--
+<div class="message" id="form-save-msg" name="form-save-msg">Save time</div>
+<div class="message" id="form-debug-msg" name="form-debug-msg"></div>
+-->
+
+
+
+<% form_for display_project_url(@project), :html => {:name => "project_display", :id => "project_display"} do |f| %>
+  <% @questions.each do |question| %>
+    <%= question.render(@code, @nancode, request.session_options[:id]) %><br />
+  <% end %>
+
+  <%= hidden_field_tag 'code_id', @code.id %>
+  <%= hidden_field_tag 'group', @group.id %>
+  <%= f.submit 'Complete' %>
+<% end %>
+
+<script type="text/javascript">
+  new Validation('project_display');
+</script>
+
+<%= observe_form(:project_display, :frequency => 2, :url => {:action => :autosave_form})  %>

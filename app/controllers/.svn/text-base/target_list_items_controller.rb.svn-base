@@ -1,0 +1,3 @@
+class TargetListItemsController < ApplicationController
+
+end

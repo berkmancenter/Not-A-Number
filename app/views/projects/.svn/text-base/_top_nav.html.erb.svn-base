@@ -1,0 +1,2 @@
+<%= image_tag "/images/branding/blue_farthing_small.png" %>
+<%= image_tag "/images/branding/title.png", :class => "page_title"%>

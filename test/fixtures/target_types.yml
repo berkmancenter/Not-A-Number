@@ -1,0 +1,11 @@
+url:
+  title: url
+  output_text: TargetUrl
+
+image:
+  title: image
+  output_text: TargetImage
+
+embedded_video:
+  title: embedded_video
+  output_text: TargetEmbeddedVideo

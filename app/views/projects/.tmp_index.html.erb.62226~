@@ -1,0 +1,35 @@
+
+<div id="page_title">Dashboard</div>
+<p>
+	All Projects by Role<br />
+<table id="project_index">
+
+  <tr>
+    <td class="p5"><b>Title</b></td>
+    <td class="p5"></td>
+    <td class="p5"></td>
+    <td class="p5"></td>
+    <td class="p5"><b>Completed</b></td>
+  </tr>
+  <% @projects.each do |project| %>
+    <%= render :partial => "project_display", :locals => {:project => project} %>
+  <% end unless @projects.nil? %>
+</table>
+
+<!--
+
+	<p>
+	All Current Projects<br />
+	<table id="projects">
+<% @projects.each do |project| %>
+  <%= render :partial => "project_display", :locals => {:project => project} %>
+<% end unless @projects.nil? %>
+	</table>
+	</p>
+
+-->
+
+<br />
+
+<%= link_to 'New project', new_project_path(:source => "dialog_index"), :title => "New Project", :onclick => "Modalbox.show(this.href, {title: this.title, width: 600}); return false;" %>
+

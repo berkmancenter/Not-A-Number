@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/not-a-number/!svn/ver/122/trunk/app/views/target_lists
+END
+_target_list_display.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/not-a-number/!svn/ver/40/trunk/app/views/target_lists/_target_list_display.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/not-a-number/!svn/ver/40/trunk/app/views/target_lists/new.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/not-a-number/!svn/ver/41/trunk/app/views/target_lists/show.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/not-a-number/!svn/ver/40/trunk/app/views/target_lists/edit.html.erb
+END
+_target_list_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/not-a-number/!svn/ver/41/trunk/app/views/target_lists/_target_list_form.html.erb
+END
+import.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/not-a-number/!svn/ver/122/trunk/app/views/target_lists/import.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/not-a-number/!svn/ver/40/trunk/app/views/target_lists/index.html.erb
+END

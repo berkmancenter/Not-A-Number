@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/not-a-number/!svn/ver/71/trunk/test/fixtures
+END
+question_items.yml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/not-a-number/!svn/ver/2/trunk/test/fixtures/question_items.yml
+END
+users.yml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/not-a-number/!svn/ver/43/trunk/test/fixtures/users.yml
+END
+project_items.yml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/not-a-number/!svn/ver/2/trunk/test/fixtures/project_items.yml
+END
+projects.yml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/not-a-number/!svn/ver/2/trunk/test/fixtures/projects.yml
+END
+target_types.yml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/not-a-number/!svn/ver/47/trunk/test/fixtures/target_types.yml
+END
+roles.yml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/not-a-number/!svn/ver/2/trunk/test/fixtures/roles.yml
+END
+questions.yml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/not-a-number/!svn/ver/2/trunk/test/fixtures/questions.yml
+END
+question_types.yml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/not-a-number/!svn/ver/71/trunk/test/fixtures/question_types.yml
+END
+group_items.yml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/not-a-number/!svn/ver/2/trunk/test/fixtures/group_items.yml
+END
+choices.yml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/not-a-number/!svn/ver/2/trunk/test/fixtures/choices.yml
+END
+groups.yml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/not-a-number/!svn/ver/2/trunk/test/fixtures/groups.yml
+END
+user_locks.yml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/not-a-number/!svn/ver/5/trunk/test/fixtures/user_locks.yml
+END

@@ -1,0 +1,9 @@
+<p><b>Thank you, this project has been completed.</b></p>
+
+<p>You can either return to the <%= link_to "Dashboard", projects_path %> or proceed to the <%= link_to "next survey", display_project_path(@project) %> in this project if one is available.
+
+
+
+
+
+

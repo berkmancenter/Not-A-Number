@@ -1,0 +1,48 @@
+# == Schema Information
+# Schema version: 20090828145656
+#
+# Table name: question_types
+#
+#  id          :integer(4)      not null, primary key
+#  title       :string(255)     not null
+#  output_text :string(1024)
+#  description :text
+#  user_id     :integer(4)
+#  active      :boolean(1)      default(TRUE)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+text:
+  title: text
+  output_text: QuestionText
+
+text_area:
+  title: text_area
+  output_text: QuestionTextArea
+
+radio:
+  title: radio
+  output_text: QuestionRadio
+
+checkbox:
+  title: checkbox
+  output_text: QuestionCheckbox
+
+drop_down:
+  title: drop_down
+  output_text: QuestionDropDown
+
+note:
+  title: note
+  output_text: QuestionNote
+
+target:
+  title: target
+  output_text: QuestionTarget
+
+autocomplete_choice:
+  title: autocomplete_choice
+  output_text: QuestionAutocompleteChoice

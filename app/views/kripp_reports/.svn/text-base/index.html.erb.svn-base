@@ -1,0 +1,6 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/kripp_reports/index.html.erb</p>
+<% image_tag(url_for(:controller => "kripp_reports", :action => "show_image")) %>
+
+Krippendorff Alpha is: <br />
+<%= @kripp %>

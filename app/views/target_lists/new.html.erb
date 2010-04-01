@@ -1,0 +1,9 @@
+<% form_for(@target_list) do |f| %>
+  <%= f.error_messages %>
+
+  <%= render :partial => "target_list_form", :object => f, :locals => {:source => @source} %>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>

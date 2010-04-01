@@ -1,0 +1,9 @@
+
+<div id="group-container">
+
+  <% @questions.each do |question| %>
+    <%= question.render(@code, @nancode, request.session_options[:id]) %><br />
+  <% end %>
+
+</div>
+

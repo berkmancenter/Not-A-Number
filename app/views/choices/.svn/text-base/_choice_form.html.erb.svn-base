@@ -1,0 +1,16 @@
+
+
+      <%= choice_form.label :title, "Title", :class => "bold_text" %><br />
+      <%= choice_form.text_field :title %><br />
+
+      <%= choice_form.label :output_text, "Text for display", :class => "bold_text" %><br />
+      <%= choice_form.text_field :output_text %><br />
+
+      <%= choice_form.label :description, "Description", :class => "bold_text" %><br />
+      <%= choice_form.text_area :description, :cols => 50, :rows => 5 %><br />
+
+      <%= hidden_field_tag :source, source %>
+
+      <% if @question %>
+      <%= hidden_field_tag :parent_id, @question.id %>
+      <% end %>

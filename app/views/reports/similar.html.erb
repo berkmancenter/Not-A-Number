@@ -1,0 +1,30 @@
+<b>Similar Artists From Last.fm</b>
+<br /><br />
+
+<% 
+@URLs.each do |r|
+%>
+  <u>Similar artists for: <%= @artists[@URLs.index(r)] %></u>
+<% 
+  response = open(r).read
+  @arrays_of_hashes = CobraVsMongoose.xml_to_hash(response) 
+  
+  @arrays_of_hashes["lfm"].each_value do |one|
+    unless one == "ok"
+      one.each_value do |two|
+	    unless two.class != Array
+	      two.each do |name1|
+%>
+	        <p>
+	        <%= name1["name"]["$"]%><br />
+	        <%= name1["url"]["$"]%>
+		    </p>
+<%
+	      end
+	    end
+      end
+    end
+  end
+%>
+--------------------------------------------------------------------------------------------<br />
+<% end %>

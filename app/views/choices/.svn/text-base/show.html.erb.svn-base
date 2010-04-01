@@ -1,0 +1,8 @@
+<p><b>Choice ID - <%= @choice.id %></b></p>
+
+<p>
+<b>Title: </b> <%= @choice.title  %><br />
+<b>Output Text: </b> <%= @choice.output_text  %><br />
+<b>Description: </b><br />
+<%= @choice.description  %><br />
+</p>

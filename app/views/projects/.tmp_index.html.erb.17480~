@@ -1,0 +1,12 @@
+<h1>All Projects</h1>
+
+<table border="1">
+<% @projects.each do |project| %>
+  <%= render :partial => "project_display", :locals => {:project => project} %>
+<% end unless @projects.nil? %>
+</table>
+
+<br />
+
+<%= link_to 'New project', new_project_path(:source => "dialog_index"), :title => "New Project", :onclick => "Modalbox.show(this.href, {title: this.title, width: 600}); return false;" %>
+

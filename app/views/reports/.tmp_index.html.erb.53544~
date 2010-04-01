@@ -1,0 +1,13 @@
+<table>
+  <tr>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td class="p5"><%= project.title %></td>
+    <td class="p5"><%= link_to "display", display_reports_path(:project_id => project.id) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

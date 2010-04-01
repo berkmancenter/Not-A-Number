@@ -1,0 +1,9 @@
+<% form_for(@choice) do |f| %>
+      <div id="modal_error_message"></div>
+
+  <%= render :partial => "choice_form", :object => f, :locals => {:source => @source, :question_id => @question_id} %>
+
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>

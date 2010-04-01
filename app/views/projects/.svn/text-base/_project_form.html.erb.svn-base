@@ -1,0 +1,19 @@
+      <%= project_form.label :title, "Title", :class => "bold_text" %><br />
+      <%= project_form.text_field :title %><br />
+
+      <%= project_form.label :ouput_text, "Text for display", :class => "bold_text" %><br />
+      <%= project_form.text_field :output_text %><br />
+
+      <%= project_form.label :description, "Description", :class => "bold_text" %><br />
+      <%= project_form.text_area :description, :cols => 50, :rows => 5 %><br />
+
+      <%= project_form.label :allow_interstitial, "Interstitial between projects?", :class => "bold_text" %><br />
+      <%=  select_tag :allow_interstitial, options_for_select([["No", false], ["Yes", true]], :selected => @allow_interstitial) %><br />
+
+      <%= project_form.label :allow_anonymous, "Allow anonymous access", :class => "bold_text" %><br />
+      <%=  select_tag :allow_anonymous, options_for_select([["No", false], ["Yes", true]], :selected => @allow_anonymous) %><br />
+
+      <%= project_form.label :allow_turk, "Allow mechanical turk", :class => "bold_text" %><br />
+      <%= select_tag :allow_turk, options_for_select([["No", false], ["Yes", true]], :selected => @allow_turk)  %><br />
+
+      <%= hidden_field_tag 'source', source %>

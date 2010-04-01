@@ -1,0 +1,33 @@
+    <div class="list-title"><%= project.title %></div><br />
+
+    <div id="project-<%=project.id%>-add-area" class="draggable_area">
+      <div class="draggable_text">
+      Drag item to add to project
+      </div>
+    </div>
+
+    <%= drop_receiving_element "project-#{project.id}-add-area",
+    :url => {:action => 'add_item', :project => @project}, 
+    :accept => "available_item",
+    :hoverclass => "background_yellow" %>
+    <br />
+
+    <ul id="item_sort">
+      <% project_items.each do |project_item| %>
+        <li id="item-<%= project_item.id%>-sort" class="droppable">
+        <%= render :partial => "active_group_display", :locals => {:project_item => project_item, :project => @project} %>
+        </li>
+    <% end unless project_items.nil?%>
+    </ul>
+
+    <br />
+
+    <%= sortable_element "item_sort",
+      :url => {:controller => :project_items, :action => 'sort_items'},
+      :before => "$('spinner_block').show()",
+      :format => '/^item-(.*)-sort$/',
+      :constraint => false
+      %>
+
+    <%= link_to 'New Project Group', new_project_group_path(project, :source => "dialog_index"), :title => "New Group", :onclick => "Modalbox.show(this.href, {title: this.title, width: 600}); return false;" %>
+

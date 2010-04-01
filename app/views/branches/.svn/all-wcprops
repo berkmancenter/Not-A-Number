@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/not-a-number/!svn/ver/151/trunk/app/views/branches
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/not-a-number/!svn/ver/142/trunk/app/views/branches/new.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/not-a-number/!svn/ver/109/trunk/app/views/branches/show.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/not-a-number/!svn/ver/142/trunk/app/views/branches/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/not-a-number/!svn/ver/142/trunk/app/views/branches/index.html.erb
+END
+_branch_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/not-a-number/!svn/ver/151/trunk/app/views/branches/_branch_form.html.erb
+END

@@ -1,0 +1,8 @@
+  <tr>
+    <td class="p5"><b><%= link_to project.title, project_url(project) %></b></td>
+    <td ><b><%= project.output_text %></b></td>
+    <td ><b><%= project.description %></b></td>
+    <td class="p5"><%= link_to 'Edit', edit_project_path(project, :source => "dialog_index"), :title => "Edit Project ID #{project.id}", :onclick => "Modalbox.show(this.href, {title: this.title, width: 600}); return false;" %></td>
+    <td class="p5"><%= link_to 'Add User', project_url(project, :page => "adduser") %></td>
+    <td class="p5"><%= link_to 'Display', display_project_url(project) %></td>
+  </tr>
