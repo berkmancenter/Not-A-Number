@@ -16,7 +16,19 @@ class BranchesController < ApplicationController
   # GET /branches/1.xml
   def show
     @branch = Branch.find(params[:id])
-
+    @project = Project.find(@branch.project_id)
+    @question = Question.find(@branch.question_id)
+    @choice = Choice.find(@branch.choice_id)
+    @group = Group.find(@branch.group_id)
+    @destination = Group.find(@branch.destination_group_id)
+    if @branch.return_group_id.nil?
+      @return = "Next Group"
+    elsif @branch.return_group_id == 0
+      @return = "End Script"
+    else
+      @return = Group.find(@branch.return_group_id)
+    end
+     
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @branch }
@@ -34,8 +46,8 @@ class BranchesController < ApplicationController
     @project = Project.find(params[:project_id])
     @qtypes = ["QuestionRadio", "QuestionCheckbox", "QuestionDropDown"]
     @group_items = @group.questions.find(:all, :conditions => {:type => @qtypes}).collect{|q| [q.output_text, q.id]}
-    p @group_items
-    
+    @return_groups = @project.groups.collect{|d| [d.output_text, d.id]}
+    @return_groups << "End Script"
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @branch }
@@ -60,6 +72,16 @@ class BranchesController < ApplicationController
     @branch = Branch.find(params[:id])
     @source = params[:source]
     @group = Group.find(@branch.group_id)
+    @project = Project.find(@branch.project_id)
+    
+    @qtypes = ["QuestionRadio", "QuestionCheckbox", "QuestionDropDown"]
+    @group_items = @group.questions.find(:all, :conditions => {:type => @qtypes}).collect{|q| [q.output_text, q.id]}
+    @return_groups = @project.groups.collect{|d| [d.output_text, d.id]}
+    @return_groups << "End Script"
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @branch }
+    end
   end
 
   # POST /branches

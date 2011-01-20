@@ -19,6 +19,17 @@ class ProjectsController < ApplicationController
     projectids = allprojects.collect{|p| p.authorizable_id}
     @projects = Project.find(:all, :conditions => {:id => projectids})
     
+    @adminrole = []
+    @userrole = []
+      
+    @projects.each do |project|
+      if current_user.has_role? "admin", project or current_user.has_role? "manager", project or current_user.has_role? "editor", project or current_user.has_role? "owner", project
+        @adminrole << project
+      elsif current_user.has_role? "user", project
+        @userrole << project
+      end  
+    end
+    
     alltargetlists = Role.find_by_sql(["select id, authorizable_id from roles join roles_users on roles.id = roles_users.role_id where roles.authorizable_type = 'TargetList' and roles_users.user_id = ?", current_user])
     targetlistids = alltargetlists.collect{|t| t.authorizable_id}
     @target_lists = TargetList.find(:all, :conditions => {:id => targetlistids})
@@ -119,6 +130,8 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @source = params[:source]
 
+    ProjectItem.destroy_all(:project_id => @project.id)
+    Branch.destroy_all(:project_id => @project.id)
     @project.destroy
 
     respond_to do |format|
@@ -185,10 +198,21 @@ class ProjectsController < ApplicationController
 
       # Full branch logic
       if !@selected_branch.blank?
-        @group = Group.find(@selected_branch[0].destination_group_id)
+        if @selected_branch[0].destination_group_id == nil
+          @group = ""
+        else
+          @group = Group.find(@selected_branch[0].destination_group_id)
+        end  
       else
         if !@branch.blank?
-          @branch.return_group_id.blank? ? @group = @project.current_group(@code) : @group = Group.find(@selected_branch.return_group_id)
+          # if there is no return group id go to the next group in order, if the return group id is 0, complete script, if there is a return group id, go to that group.
+          if @branch.return_group_id.blank? 
+            @group = @project.current_group(@code)
+          elsif @branch.return_group_id == 0
+            @group = ""
+          else  
+            @group = Group.find(@selected_branch.return_group_id)
+          end  
         else
           @group = @project.current_group(@code)
         end
@@ -228,14 +252,14 @@ class ProjectsController < ApplicationController
   
   def assignuser
       @assigned_users = []
-      @users = User.all
+      @users = User.all(:order => :login)
       #@users_roles = User.find_by_sql(["SELECT * FROM roles_users LEFT JOIN roles ON roles_users.role_id = roles.id WHERE roles.authorizable_type = 'Project' AND authorizable_id = ?", params[:id]])
       #@users_roles.collect{|x| @assigned_users << User.find(x.user_id)}
     if params[:role].nil?  
-      @assigned_users = User.find_by_sql(["SELECT users.login, roles_users.user_id, roles_users.role_id, roles.name, roles.authorizable_type, roles.authorizable_id FROM users, roles_users LEFT JOIN roles ON roles_users.role_id = roles.id WHERE users.id = roles_users.user_id AND roles.authorizable_type = 'Project' AND roles.authorizable_id = ?", params[:id]])
+      @assigned_users = User.find_by_sql(["SELECT users.login, roles_users.user_id, roles_users.role_id, roles.name, roles.authorizable_type, roles.authorizable_id FROM users, roles_users LEFT JOIN roles ON roles_users.role_id = roles.id WHERE users.id = roles_users.user_id AND roles.authorizable_type = 'Project' AND roles.authorizable_id = ? order by login", params[:id]])
       @project = Project.find(params[:id])
     else  
-      @assigned_users = User.find_by_sql(["SELECT users.login, roles_users.user_id, roles_users.role_id, roles.name, roles.authorizable_type, roles.authorizable_id FROM users, roles_users LEFT JOIN roles ON roles_users.role_id = roles.id WHERE users.id = roles_users.user_id AND roles.authorizable_type = 'Project' AND roles.authorizable_id = ?", params[:project]])
+      @assigned_users = User.find_by_sql(["SELECT users.login, roles_users.user_id, roles_users.role_id, roles.name, roles.authorizable_type, roles.authorizable_id FROM users, roles_users LEFT JOIN roles ON roles_users.role_id = roles.id WHERE users.id = roles_users.user_id AND roles.authorizable_type = 'Project' AND roles.authorizable_id = ? order by login", params[:project]])
       @project = Project.find(params[:project])
       user = User.find(params[:id])
       if params[:role_action] == "add"
@@ -243,7 +267,12 @@ class ProjectsController < ApplicationController
       elsif params[:role_action] == "remove"
         user.has_no_role!(params[:role], @project)
       end
-    end  
+      respond_to do |format|
+        format.html { redirect_to(assignuser_project_url(@project)) }
+        format.xml  { head :ok }
+      end
+    end
+    
   end
 
   # Method displays an inactive view of a project

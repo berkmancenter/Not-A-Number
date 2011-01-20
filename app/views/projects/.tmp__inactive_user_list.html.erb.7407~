@@ -1,0 +1,38 @@
+ <div class="list-title">Available Users </div><br />
+
+    <div id="object-<%= object.id%>-remove-area" class="draggable_area">
+      <div class="draggable_text">
+      Drag item to remove
+      </div>
+    </div>
+
+    <%= drop_receiving_element "object-#{object.id}-remove-area",
+    :url => {:action => 'remove_user', :object => object},
+    :accept => "droppable",
+    :hoverclass => "background_yellow"%>
+    <br />
+
+    <ul id="group_list">
+
+      <% available_users.each do |object_user| %>
+        <li id="object-<%= object_user.id%>" class="available_item">
+  			<div class="available_header"><%= object_user.login %></div>
+  			<div class="item_control_block">
+    			<!--<div class="cell_like item_controls"><%= link_to 'Show', polymorphic_url(object_user) %></div>
+    			<div class="cell_like item_controls"><%= link_to 'Edit', edit_polymorphic_path(object_user, :source => "dialog_index"), :title => "Edit #{object_user.class} ID #{object_user.id}", :onclick => "Modalbox.show(this.href, {title: this.title, width: 600}); return false;" %></div>
+    			<div class="cell_like item_controls"><%= link_to_function 'Delete', render_destroy(object_user, "dialog_index", "Delete #{object_user.class} ID #{object_user.id}") %></div>
+				-->
+				<div class="cell_like item_controls"><%= link_to 'Set Admin', assignuser_project_url(object_user, :role => "admin", :project => object, :role_action => "add") %></div>
+				<div class="cell_like item_controls"><%= link_to 'Set Owner', assignuser_project_url(object_user, :role => "owner", :project => object, :role_action => "add") %></div>
+				<div class="cell_like item_controls"><%= link_to 'Set Manager', assignuser_project_url(object_user, :role => "manager", :project => object, :role_action => "add") %></div>
+				<div class="cell_like item_controls"><%= link_to 'Set Editor', assignuser_project_url(object_user, :role => "editor", :project => object, :role_action => "add") %></div>
+				<div class="cell_like item_controls"><%= link_to 'Set User', assignuser_project_url(object_user, :role => "user", :project => object, :role_action => "add") %></div>
+  			</div>
+		</li>
+		<%= draggable_element("object-#{object_user.id}", :revert => "\"failure\"") %>
+      <% end unless available_users.nil?%>
+        
+    </ul> 
+
+
+

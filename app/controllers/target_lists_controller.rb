@@ -15,8 +15,8 @@ class TargetListsController < ApplicationController
   def show
     @target_list = TargetList.find(params[:id])
     @target_list_items = @target_list.target_list_items
-
-    @available_target_items = Target.available_items(@target_list)
+    
+    #@available_target_items = Target.available_items(@target_list)
 
     respond_to do |format|
       format.html # show.html.erb

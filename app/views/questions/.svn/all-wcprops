@@ -18,8 +18,8 @@ END
 show.html.erb
 K 25
 svn:wc:ra_dav:version-url
-V 69
-/svn/not-a-number/!svn/ver/41/trunk/app/views/questions/show.html.erb
+V 70
+/svn/not-a-number/!svn/ver/165/trunk/app/views/questions/show.html.erb
 END
 edit.html.erb
 K 25
@@ -36,8 +36,8 @@ END
 import.html.erb
 K 25
 svn:wc:ra_dav:version-url
-V 71
-/svn/not-a-number/!svn/ver/90/trunk/app/views/questions/import.html.erb
+V 72
+/svn/not-a-number/!svn/ver/165/trunk/app/views/questions/import.html.erb
 END
 index.html.erb
 K 25

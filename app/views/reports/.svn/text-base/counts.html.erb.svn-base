@@ -1,0 +1,18 @@
+choices 
+
+<%
+ 
+@clustercounts.each do |row|
+  @choices[:q95].each do |possible_answer|
+    if row.q95 == possible_answer
+      output += "#{possible_answer} : #{row.tally}"
+    else
+      output += "#{possible_answer}: n/a"
+    end
+  end
+end
+
+%>
+
+
+

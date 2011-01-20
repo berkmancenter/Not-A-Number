@@ -225,7 +225,11 @@ class QuestionRadio < Question
   end
 
   def report_data(code, nancode)
-    return self.recent_answer(code, nancode).blank? ? "" : "\"#{CGI.escapeHTML(self.recent_answer(code, nancode).choice.output_text)}\""
+    if !self.recent_answer(code, nancode).blank? and (self.recent_answer(code, nancode).choice_id == 0 or self.recent_answer(code, nancode).choice_id == nil)
+      return "\"#{CGI.escapeHTML(self.recent_answer(code, nancode).answer_data)}\""  
+    else
+      return self.recent_answer(code, nancode).blank? ? "" : "\"#{CGI.escapeHTML(self.recent_answer(code, nancode).choice.output_text)}\""
+    end  
   end
   
 end

@@ -1,9 +1,0 @@
-<% form_for(@project) do |f| %>
-  <%= f.error_messages %>
-
-  <%= render :partial => "project_form", :object => f, :locals => {:source => @source} %>
-
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>

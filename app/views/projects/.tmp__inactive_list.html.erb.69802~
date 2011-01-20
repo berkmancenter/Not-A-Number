@@ -1,0 +1,24 @@
+ <div class="list-title">Available </div><br />
+
+    <div id="object-<%= object.id%>-remove-area" class="draggable_area">
+      <div class="draggable_text">
+      Drag item to remove
+      </div>
+    </div>
+
+    <%= drop_receiving_element "object-#{object.id}-remove-area",
+    :url => {:action => 'remove_item', :object => object},
+    :accept => "droppable",
+    :hoverclass => "background_yellow"%>
+    <br />
+
+    <ul id="group_list">
+
+      <% available_objects.each do |object_item| %>
+        <%= render :partial => "projects/object_display", :locals => {:object => object_item} %>
+      <% end unless available_objects.nil?%>
+        
+    </ul> 
+
+
+

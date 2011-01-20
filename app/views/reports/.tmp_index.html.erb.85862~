@@ -1,0 +1,46 @@
+<div id="page_title">Reports</div>
+<br />
+<b>Comma Separated Values Data Reports:</b>
+<br /><br />
+<table>
+  <tr>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td class="p5"><%= project.title %></td>
+    <td class="p5"><%= link_to "display", display_reports_path(:project_id => project.id) %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<hr />
+<b>Targets Coded by User:</b>
+<br /><br />
+
+<% form_for :completed, :url => { :action => 'displayCompleted' } do |f| %>
+  <%= f.error_messages %>
+
+  Select Project: 
+  <%= f.select(:project, @projecids ) %><br />
+
+  <p>
+    <%= submit_tag 'Go' %>
+  </p>
+<% end %>
+
+<hr />
+<b>Get Similar Artists:</b>
+<br /><br />
+
+<% form_for :similar, :url => { :action => 'similar' } do |f| %>
+  <%= f.error_messages %>
+
+  Select Project: 
+  <%= f.select(:project, @projecids ) %><br />
+
+  <p>
+    <%= submit_tag 'Go' %>
+  </p>
+<% end %>

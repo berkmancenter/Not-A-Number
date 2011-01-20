@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 55
-/svn/not-a-number/!svn/ver/142/trunk/app/views/projects
+/svn/not-a-number/!svn/ver/162/trunk/app/views/projects
 END
 _project_display.html.erb
 K 25
 svn:wc:ra_dav:version-url
 V 81
-/svn/not-a-number/!svn/ver/118/trunk/app/views/projects/_project_display.html.erb
+/svn/not-a-number/!svn/ver/176/trunk/app/views/projects/_project_display.html.erb
 END
 _inactive_user_list.html.erb
 K 25
@@ -121,7 +121,7 @@ _active_object_display.html.erb
 K 25
 svn:wc:ra_dav:version-url
 V 87
-/svn/not-a-number/!svn/ver/142/trunk/app/views/projects/_active_object_display.html.erb
+/svn/not-a-number/!svn/ver/169/trunk/app/views/projects/_active_object_display.html.erb
 END
 _inactive_list.html.erb
 K 25
@@ -139,7 +139,7 @@ index.html.erb
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/svn/not-a-number/!svn/ver/133/trunk/app/views/projects/index.html.erb
+/svn/not-a-number/!svn/ver/176/trunk/app/views/projects/index.html.erb
 END
 _object_user_list.html.erb
 K 25

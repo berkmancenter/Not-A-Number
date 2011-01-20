@@ -100,13 +100,13 @@ class ReportsController < ApplicationController
     end
 
     @question_ids = @group_items.collect {|group_item|
-      question_text = "#{group_item.question_id.to_s} - \'#{group_item.question.title}\'"
+      question_text = "\"#{group_item.question_id.to_s} - \'#{group_item.question.title}\'\""
       @group_items.last == group_item ? question_text : question_text + "," }
 
     @question_ids << 8
     @question_ids << 37
 
-    @report_content = "user_id,user_name,code_id,#{@question_ids}\n"
+    @report_content = "user_id,user_name,code_id,#{@question_ids},date_saved\n"
 
     @codes.each do |code|
       answers_array = Array.new
@@ -130,10 +130,11 @@ class ReportsController < ApplicationController
         answers_array << answer
       end
       
-      @report_content += "#{code.user_id},\"#{code.user.login}\",#{code.id},#{answers_array}\n"
+      @report_content += "#{code.user_id},\"#{code.user.login}\",#{code.id},#{answers_array},#{code.updated_at}\n"
 
       response.headers['Content-Type'] = 'text/csv; charset=iso-8859-1; header=present'
-      response.headers['Content-Disposition'] = 'attachment; filename=report.csv'
+      filename = "attachment; filename=#{@project.title}.csv"
+      response.headers['Content-Disposition'] = filename
 
     end
   end
@@ -166,6 +167,15 @@ class ReportsController < ApplicationController
       format.html # index.html.erb
       format.xml  { render :xml => @reports }
     end
+  end
+  
+  def counts
+    @clustercounts = Report.find_by_sql(["select clu35,q95,count(q95) as tally from zzzz_data_clusters group by clu35,q95;"])
+    @choices = {:q95 => ["Yes", "No", "Don't Know/Can't Tell"], :q17 => [88, 143, 160, 163, 173, 184, 343, 344, 356], :q18 => [198, 199, 200, 201, 346, 357], :q69 => ["Yes", "No", "Don't Know"], :q20 => ["Male", "Female", "Don't Know/Group Blog"]}
+    p "data"
+    p @clustercounts[0].class
+    
+    
   end
 
 end

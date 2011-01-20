@@ -1,6 +1,10 @@
     <div class="list-title"><%= object.title %></div><br />
 
-    <div id="object-<%=object.id%>-add-area-0" class="draggable_area"></div>
+    <div id="object-<%=object.id%>-add-area-0" class="draggable_area">
+    	<div class="draggable_text">
+      		Drag item to add
+      	</div>
+    </div>
 
     <%= drop_receiving_element "object-#{object.id}-add-area-0",
     :url => {:action => 'add_item', :object => object, :item_number => 0},

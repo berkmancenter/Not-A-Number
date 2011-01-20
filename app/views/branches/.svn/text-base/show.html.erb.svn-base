@@ -1,3 +1,17 @@
+<div id="page_title">Branch Details</div><br />
 
-<%= link_to 'Edit', edit_branch_path(@branch) %> |
-<%= link_to 'Back', branches_path %>
+<b>Project:</b> <%= @project.output_text %>
+<br />
+<b>Question:</b> <%= @question.output_text %>
+<br />
+<b>Choice:</b> <%= @choice.output_text %>
+<br />
+<b>Current Group:</b> <%= @group.output_text %>
+<br />
+<b>Destination Group:</b> <%= @destination.output_text %>
+<br />
+<b>Return Group:</b> <%= @return %>
+<br /><br />
+
+<%= link_to 'Edit', edit_branch_path(@branch, :source => "dialog_index", :project_id => @branch.project_id, :group_id => @branch.group_id), :title => "Edit Branch ID #{@branch.id}", :onclick => "Modalbox.show(this.href, {title: this.title, width: 600}); return false;" %>  |
+<%= link_to 'Back', question_branches_path(@group, :source => "dialog_index", :project_id => @project.id, :group_id => @group.id), :title => "Edit Branches #{@group.class} ID #{@group.id}" %>

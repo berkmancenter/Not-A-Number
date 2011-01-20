@@ -2,29 +2,50 @@
 <div>
 <div>
 <p>
-	<span id="section_title">Your Projects</span><br />
-	<table id="project_index">
-	
-	  <tr>
-	    <td class="p5"><b>Title</b></td>
-	    <td class="p5"><b>Edit</b></td>
-	    <td class="p5"><b>Edit Role</b></td>
-	    <td class="p5"><b>New User</b></td>
-		<td class="p5"><b>Preview</b></td>
-		<td class="p5"><b>Display</b></td>
-	    <td class="p5"><b>Completed</b></td>
-	    <td class="p5"><b>Remaining</b></td>
-	    <td class="p5"><b>Anonymous</b></td>
-	    <td class="p5"><b>Interstitial</b></td>
-	    <td class="p5"><b>Turk</b></td>
-	  </tr>
-	  
-	
-	  <% @projects.each do |project| %>
-	    <%= render :partial => "project_display", :locals => {:project => project} %>
-	  <% end unless @projects.nil? %>
-	</table>
+	<% unless @userrole.empty? %>
+		<span id="section_title">Your Projects as Coder</span><br /><br />
+		<table id="project_index" border=1 rules=ALL frame=VOID cellpadding = 15>
+		
+		  <tr>
+		    <td class="p5"><b>Title</b></td>
+			<td class="p5"><b>Preview</b></td>
+			<td class="p5"><b>Display</b></td>
+			<td class="p5"><b>Completed</b></td>
+		    <td class="p5"><b>Remaining</b></td>
+		  </tr>
 
+		  <% @userrole.each do |project| %>
+		    <%= render :partial => "project_display", :locals => {:project => project} %>
+		  <% end unless @userrole.nil? %>
+		</table>
+		<br /><br />
+		
+	<% end %>
+	
+	<% unless @adminrole.empty? %>
+		<span id="section_title">Your Projects as Admin</span><br /><br />
+		<table id="project_index" border=1 rules=ALL frame=VOID cellpadding = 15>
+		
+		  <tr>
+		    <td class="p5"><b>Title</b></td>  
+		    <td class="p5"><b>Edit</b></td>
+		    <td class="p5"><b>Edit Role</b></td>
+		    <td class="p5"><b>New User</b></td>
+			<td class="p5"><b>Preview</b></td>
+			<td class="p5"><b>Display</b></td>  
+			<td class="p5"><b>Completed</b></td>
+		    <td class="p5"><b>Remaining</b></td>
+			<td class="p5"><b>Anonymous</b></td>
+		    <td class="p5"><b>Interstitial</b></td>
+		    <td class="p5"><b>Turk</b></td> 
+			<td class="p5"><b>Delete</b></td>
+		  </tr>
+
+		  <% @adminrole.each do |project| %>
+		    <%= render :partial => "project_display", :locals => {:project => project} %>
+		  <% end unless @adminrole.nil? %>
+		</table>
+	<% end %>
 	<br />
 
 	<%= link_to 'New project', new_project_path(:source => "dialog_index"), :title => "New Project", :onclick => "Modalbox.show(this.href, {title: this.title, width: 600}); return false;" %>
@@ -32,6 +53,7 @@
 </p>
 </div>
 <div style="margin-top:30px;">
+<hr />
 <p>
 	<span id="section_title">Your Target lists</span><br />
 	

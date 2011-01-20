@@ -1,18 +1,18 @@
 <b>Import choices via CSV</b>
 
 <p>
-  Use the form below to import choices via a CSV (comma separated value) file.  Text and strings must be surrounded by double quotes.
-  Each row will be separated by a newline or carriage return.  e.g. "title", "output_text", "description"
+  Use the form below to import choices via a CSV (comma separated value) file. All three fields must be present even if they are left blank.
+  Do not use quotes around text in any field. Each row will be separated by a newline or carriage return.  e.g. title, output_text, description
 </p>
 
 <p>
   <b><i>Format example:</i></b><br />
 
   <code>
-    "country_norway", "Norway", "A little nip of Norway"<br />
-    "country_greece", "Greece", "A little spot of Greece"<br />
-    "country_hungary", "Hungary", "A little hunk of Hungary"<br />
-    "country_turkey", "Turkey", "A little slice of Turkey"<br />
+    country_norway, Norway, A little nip of Norway<br />
+    country_greece, Greece, A little spot of Greece<br />
+    country_hungary, Hungary, A little hunk of Hungary<br />
+    country_turkey, Turkey, A little slice of Turkey<br />
   </code>
 
 </p>

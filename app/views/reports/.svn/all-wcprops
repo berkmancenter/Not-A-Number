@@ -33,6 +33,12 @@ svn:wc:ra_dav:version-url
 V 80
 /svn/not-a-number/!svn/ver/136/trunk/app/views/reports/displayCompleted.html.erb
 END
+counts.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/not-a-number/!svn/ver/177/trunk/app/views/reports/counts.html.erb
+END
 display.html.erb
 K 25
 svn:wc:ra_dav:version-url
@@ -43,5 +49,5 @@ index.html.erb
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/svn/not-a-number/!svn/ver/154/trunk/app/views/reports/index.html.erb
+/svn/not-a-number/!svn/ver/177/trunk/app/views/reports/index.html.erb
 END

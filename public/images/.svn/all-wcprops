@@ -27,6 +27,12 @@ svn:wc:ra_dav:version-url
 V 66
 /svn/not-a-number/!svn/ver/115/trunk/public/images/create_user.png
 END
+cross.png
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/not-a-number/!svn/ver/174/trunk/public/images/cross.png
+END
 rails.png
 K 25
 svn:wc:ra_dav:version-url

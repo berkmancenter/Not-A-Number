@@ -1,7 +1,7 @@
 <% object_item.active ? div_class = "" : div_class = "_inactive" %>
 <% object_item.active ? status_text = "Deactivate" : status_text = "Activate" %>
 <% if object_item.class == GroupItem %>
-  <% object_item.required ? reqiured_text = "Do not require" : reqiured_text = "Require" %>
+  <% object_item.required ? reqiured_text = "Not Required" : reqiured_text = "Required" %>
 <% end %>
 
 <div id="item-<%= object_item.id%>-content" class="sort_item<%= div_class %>">
@@ -16,7 +16,7 @@
 	<%if object_item.child_object.class == Group %>
     <div class="cell_like item_controls"><%= link_to 'Preview', {:controller => :projects, :action => :display_preview, :group_id =>  object_item.child_object.id}, :target => "_blank" %></div>
     <div class="cell_like item_controls"><%= link_to 'Add Branch', new_question_branch_path(object_item.child_object, :source => "dialog_index", :project_id => object.id, :group_id => object_item.child_object.id), :title => "Add Branch #{object.class} ID #{object.id}", :onclick => "Modalbox.show(this.href, {title: this.title, width: 600}); return false;" %></div>
-	<div class="cell_like item_controls"><%= link_to 'Edit Branches', question_branches_path(object_item.child_object, :source => "dialog_index", :project_id => object.id, :group_id => object_item.child_object.id), :title => "Edit Branches #{object.class} ID #{object.id}" %></div>
+	<div class="cell_like item_controls"><%= link_to 'Show/Edit Branches', question_branches_path(object_item.child_object, :source => "dialog_index", :project_id => object.id, :group_id => object_item.child_object.id), :title => "Edit Branches #{object.class} ID #{object.id}" %></div>
 	<% end %>
   </div>
 </div>

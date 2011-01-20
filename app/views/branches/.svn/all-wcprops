@@ -13,7 +13,7 @@ show.html.erb
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/svn/not-a-number/!svn/ver/109/trunk/app/views/branches/show.html.erb
+/svn/not-a-number/!svn/ver/169/trunk/app/views/branches/show.html.erb
 END
 edit.html.erb
 K 25
@@ -25,11 +25,11 @@ index.html.erb
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/svn/not-a-number/!svn/ver/142/trunk/app/views/branches/index.html.erb
+/svn/not-a-number/!svn/ver/169/trunk/app/views/branches/index.html.erb
 END
 _branch_form.html.erb
 K 25
 svn:wc:ra_dav:version-url
 V 77
-/svn/not-a-number/!svn/ver/151/trunk/app/views/branches/_branch_form.html.erb
+/svn/not-a-number/!svn/ver/170/trunk/app/views/branches/_branch_form.html.erb
 END

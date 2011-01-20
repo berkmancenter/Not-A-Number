@@ -7,13 +7,16 @@
 <%= @group.output_text %><br />
 <br />
 <%= branch_form.label :question, "Choose Question", :class => "bold_text" %><br />
-<%= branch_form.select(:question_id, @group_items, {:include_blank => ''}) %><br />
+<%= branch_form.select(:question_id, @group_items, {:include_blank => 'Choose Question...'}) %><br />
 <br />
 <%= branch_form.label :choice, "Choose Answer Choice", :class => "bold_text" %><br />
 <select id="branch_choice_id" name="branch[choice_id]"></select><br />
 <br />
 <%= branch_form.label :dest_group, "Choose Destination Group", :class => "bold_text" %><br />
-<%= branch_form.select(:destination_group_id, @project.groups.collect{|d| [d.output_text, d.id]}, {:include_blank => ''}) %><br />
+<%= branch_form.select(:destination_group_id, @project.groups.collect{|d| [d.output_text, d.id]}, {:include_blank => 'End Script'}) %><br />
+<br />
+<%= branch_form.label :return_group, "Choose Return Group", :class => "bold_text" %><br />
+<%= branch_form.select(:return_group_id, @return_groups, {:include_blank => 'Next Group'}) %><br />
 <br />
 <%= hidden_field_tag :source, source %>
 <%= hidden_field_tag :project_id, project_id %>
